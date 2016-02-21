@@ -4,7 +4,7 @@ class ContactListsController < ApplicationController
   # GET /contact_lists
   # GET /contact_lists.json
   def index
-    @contact_lists = ContactList.all
+    @contact_lists = ContactList.search(params[:f_search])   
   end
 
   # GET /contact_lists/1
@@ -60,6 +60,12 @@ class ContactListsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def search
+      contact = params[:f_search]
+      @contact_lists = ContactList.where("contact LIKE ?", "%#{contact}%")     
+  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

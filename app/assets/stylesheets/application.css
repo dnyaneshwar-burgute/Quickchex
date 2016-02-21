@@ -13,3 +13,32 @@
  *= require_tree .
  *= require_self
  */
+
+/* Customer Search Form*/
+input#f_search {
+  width: 100%;
+}
+
+.left-inner-addon {
+    position: relative;
+}
+.left-inner-addon input {
+    padding-left: 30px;    
+}
+.left-inner-addon i {
+    position: absolute;
+    padding: 10px 12px;
+    pointer-events: none;
+}
+
+#searchclear {
+    position:absolute;
+    right:5px;
+    top:0;
+    bottom:0;
+    height:25px;
+    margin:auto;
+    font-size:14px;
+    cursor:pointer;
+    color:#ccc;
+}
