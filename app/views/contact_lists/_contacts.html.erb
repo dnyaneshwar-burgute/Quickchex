@@ -8,7 +8,8 @@
     </tr>
   </thead>
   <tbody>
-    <% contact_lists.each do |contact_list| %>
+    <% logger.info("#{contact_lists.inspect}")%>
+    <%contact_lists.each do |contact_list| %>
       <tr>
         <td><%= contact_list.id %></td>
         <td>

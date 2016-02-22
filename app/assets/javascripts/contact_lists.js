@@ -1,30 +1,29 @@
-var $j = jQuery.noConflict();
-$j(document).ready(function(){
-$j("#searchclear").hide();
+
+$(document).ready(function(){
+$("#searchclear").hide();
 
 // taking input
-  $j("#f_search").focus(function(){
-    $j("#searchclear").toggle(Boolean($j(this).val()));
+  $("#f_search").focus(function(){
+    $("#searchclear").toggle(Boolean($(this).val()));
   });
   
-  $j("#searchclear").click(function(){
-      $j('#f_search').val('')
-      $j('.number').text('')             
-      $j(this).hide();
+  $("#searchclear").click(function(){
+      $('#f_search').val('')
+      $('.number').text('')             
+      $(this).hide();
   }); 
 
   // ajax call on change input
 
-  $j('.number').bind("DOMSubtreeModified",function(){
-    $j("#f_search").val($j(this).text());
-    
+  $('.number').bind("DOMSubtreeModified",function(){
+    $("#f_search").val($(this).text());    
   });
 
-$j(function(){
+$(function(){
 
-    var dials = $j(".dials ol li");
+    var dials = $(".dials ol li");
     var index;
-    var number = $j(".number");
+    var number = $(".number");
     var total;
 
     dials.click(function(){
@@ -60,7 +59,7 @@ $j(function(){
         }else{ number.append(index+1); }
     });
 
-    $j(document).keydown(function(e){
+    $(document).keydown(function(e){
 
         switch(e.which){
 

@@ -4,7 +4,11 @@ class ContactListsController < ApplicationController
   # GET /contact_lists
   # GET /contact_lists.json
   def index
-    @contact_lists = ContactList.search(params[:f_search])   
+    @contact_lists = ContactList.search(params[:f_search])  
+    respond_to do |format|
+      format.html
+      format.js
+    end 
   end
 
   # GET /contact_lists/1
